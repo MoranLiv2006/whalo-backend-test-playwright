@@ -9,6 +9,11 @@
     "RewardResourceType": 3,
     "Amount": 10
   },
+  "2": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 5000
+  },
   "3": {
     "RewardDefinitionType": 6,
     "RewardResourceType": 0,
@@ -18,6 +23,16 @@
     "RewardDefinitionType": 1,
     "RewardResourceType": 1,
     "Amount": 1000
+  },
+  "5": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 10
+  },
+  "6": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 10000
   },
   "7": {
     "RewardDefinitionType": 6,
@@ -39,20 +54,50 @@
     "RewardResourceType": 1,
     "Amount": 2500
   },
+  "11": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 2
+  },
+  "12": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 5000
+  },
   "13": {
     "RewardDefinitionType": 6,
     "RewardResourceType": 0,
     "Amount": 5
+  },
+  "14": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 5000
+  },
+  "15": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 3,
+    "Amount": 10
   },
   "16": {
     "RewardDefinitionType": 1,
     "RewardResourceType": 1,
     "Amount": 10000
   },
+  "17": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 1
+  },
   "18": {
     "RewardDefinitionType": 1,
     "RewardResourceType": 1,
     "Amount": 1000
+  },
+  "19": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 2,
+    "Amount": 10
   },
   "20": {
     "RewardDefinitionType": 1,
@@ -63,5 +108,25 @@
     "RewardDefinitionType": 6,
     "RewardResourceType": 0,
     "Amount": 1
+  },
+  "22": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 25000
+  },
+  "23": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 5
+  },
+  "24": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 5000
+  },
+  "25": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 3
   }
 }
