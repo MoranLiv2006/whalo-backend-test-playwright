@@ -55,7 +55,7 @@ test.describe("Positive Test Scenarios", () => {
         }
 
         // Sleep for 1 second because the automation is too fast, causing the second login to appear as the same timestamp as the first login
-        new Promise(resolve => setTimeout(resolve, 1500));
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
         // Second time login
         let secondLoginResponse = await loginService.login(randomDeviceId);
