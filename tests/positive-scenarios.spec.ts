@@ -29,27 +29,42 @@ test.describe("Positive Test Scenarios", () => {
     });
 
 
-    test('Login, spin once, and check that the coin balance has increased', async () => {
+    test('Login, spin once, and check that the balance has increased', async () => {
         let loginResponse = await loginService.login(randomDeviceId);
         validateLogin(loginResponse);
         expect(loginResponse.response.LoginResponse.AccountCreated).toBe(true);
 
-        let userBalanceAtFirstLogin = loginResponse.response.LoginResponse.UserBalance.Coins;
+        // Fetch and store the initial user balance
+        let coinsBalanceAtFirstLogin = loginResponse.response.LoginResponse.UserBalance.Coins;
+        let gemsBalanceAtFirstLogin = loginResponse.response.LoginResponse.UserBalance.Gems;
+        let energyBalanceAtFirstLogin = loginResponse.response.LoginResponse.UserBalance.Energy;
+
+        // Spin the wheel
         let spinResponse = await wheelService.spin(loginResponse.response.LoginResponse.AccessToken);
         validateWheelSpin(spinResponse);
 
-        let calculatedBalanceAfterSpin;
+        // Calculate the updated coin balance (after the coin reward from the spin)
+        // Also validate the amount of the gems remain the same as the first login, and the amount of energy has decres by 1
+        let calculatedCoinsBalanceAfterSpin;
         if (spinResponse.response.SpinResult.Rewards[0].RewardResourceType === 1 &&
             spinResponse.response.SpinResult.Rewards[0].RewardDefinitionType === 1) {
-            calculatedBalanceAfterSpin = userBalanceAtFirstLogin + spinResponse.response.SpinResult.Rewards[0].Amount;
-            expect(spinResponse.response.SpinResult.UserBalance.Coins).toEqual(calculatedBalanceAfterSpin);
+            calculatedCoinsBalanceAfterSpin = coinsBalanceAtFirstLogin + spinResponse.response.SpinResult.Rewards[0].Amount;
+            expect(spinResponse.response.SpinResult.UserBalance.Coins).toEqual(calculatedCoinsBalanceAfterSpin);
+            expect(spinResponse.response.SpinResult.UserBalance.Gems).toEqual(gemsBalanceAtFirstLogin);
+            expect(spinResponse.response.SpinResult.UserBalance.Energy).toBeLessThan(energyBalanceAtFirstLogin);
         }
-        // Sleep for 1 second because the automation is too fast, causing the second login to appear as the same timestamp as the first login
-        new Promise(resolve => setTimeout(resolve, 1000));
 
+        // Sleep for 1 second because the automation is too fast, causing the second login to appear as the same timestamp as the first login
+        new Promise(resolve => setTimeout(resolve, 1500));
+
+        // Second time login
         let secondLoginResponse = await loginService.login(randomDeviceId);
         validateLogin(secondLoginResponse);
-        expect(secondLoginResponse.response.LoginResponse.UserBalance.Coins).toEqual(calculatedBalanceAfterSpin);
+
+        // Validate that the user balance is the same as after the wheel has spun
+        expect(secondLoginResponse.response.LoginResponse.UserBalance.Coins).toEqual(calculatedCoinsBalanceAfterSpin);
+        expect(secondLoginResponse.response.LoginResponse.UserBalance.Gems).toEqual(spinResponse.response.SpinResult.UserBalance.Gems);
+        expect(secondLoginResponse.response.LoginResponse.UserBalance.Energy).toEqual(spinResponse.response.SpinResult.UserBalance.Energy);
         await validateSessionsPersist(secondLoginResponse, loginResponse);
     });
 
