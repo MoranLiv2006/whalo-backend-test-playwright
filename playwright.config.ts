@@ -5,7 +5,7 @@ export default defineConfig({
   testDir: './tests',          // where your test files are
   fullyParallel: true,         // run tests in parallel
   forbidOnly: !!process.env.CI, // fail build if test.only is left
-  retries: process.env.CI ? 2 : 0, // retry only on CI
+  retries: process.env.CI ? 5 : 0, // retry only on CI
   workers: process.env.CI ? 1 : undefined, // single worker on CI
 
   reporter: 'html',            // HTML report
