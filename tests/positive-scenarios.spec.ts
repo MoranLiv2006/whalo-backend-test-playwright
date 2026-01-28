@@ -29,7 +29,7 @@ test.describe("Positive Test Scenarios", () => {
     });
 
 
-    test('Login, spin once, and check that the balance has increased', async () => {
+    test('Login, spin once, and check that the balance has increased', {tag: ['@sanity']}, async () => {
         let loginResponse = await loginService.login(randomDeviceId);
         validateLogin(loginResponse);
         expect(loginResponse.response.LoginResponse.AccountCreated).toBe(true);
