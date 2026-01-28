@@ -1,0 +1,67 @@
+{
+  "0": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 5000
+  },
+  "1": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 3,
+    "Amount": 10
+  },
+  "3": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 1
+  },
+  "4": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 1000
+  },
+  "7": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 3
+  },
+  "8": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 100000
+  },
+  "9": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 1
+  },
+  "10": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 2500
+  },
+  "13": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 5
+  },
+  "16": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 10000
+  },
+  "18": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 1000
+  },
+  "20": {
+    "RewardDefinitionType": 1,
+    "RewardResourceType": 1,
+    "Amount": 2500
+  },
+  "21": {
+    "RewardDefinitionType": 6,
+    "RewardResourceType": 0,
+    "Amount": 1
+  }
+}
