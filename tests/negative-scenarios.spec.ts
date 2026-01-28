@@ -4,7 +4,7 @@ import LoginService from "../src/services/login.service";
 import WheelService from "../src/services/wheel.service";
 import {ErrorMessages} from "../src/helpers/error-messages";
 
-test.describe("Positive Scenarios", () => {
+test.describe("Negative Test Scenarios", () => {
     let apiClient: ApiClient;
     let loginService: LoginService;
     let wheelService: WheelService;
