@@ -44,7 +44,8 @@ test.describe("Positive Test Scenarios", () => {
             calculatedBalanceAfterSpin = userBalanceAtFirstLogin + spinResponse.response.SpinResult.Rewards[0].Amount;
             expect(spinResponse.response.SpinResult.UserBalance.Coins).toEqual(calculatedBalanceAfterSpin);
         }
-
+        // Sleep for 1 second because the automation is too fast, causing the second login to appear as the same timestamp as the first login
+        new Promise(resolve => setTimeout(resolve, 1000));
 
         let secondLoginResponse = await loginService.login(randomDeviceId);
         validateLogin(secondLoginResponse);
